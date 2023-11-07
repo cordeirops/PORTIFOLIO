@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="Styles/form_style.css">
+</head>
+<body>
+    <header class="cabecalho">        
+        <nav class="cabecalho__menu">
+            <a href="index.html" class="cabecalho__menu__link">Home</a>
+            <a  href="about.html" class="cabecalho__menu__link">Sobre mim</a>
+            <a href="contact.html" class="cabecalho__menu__link">Contato</a>
+        </nav>
+    </header>
+    <main>
+        <div class="content">
+            <h1>Formulário de contato!</h1>
+            <form>
+                    <div>
+                        <input type="text" placeholder="Digite seu nome" class="inputs" required oninput="nameValidate">
+                        <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
+                    </div> 
+                    <div>
+                        <input type="email" placeholder="Digite seu email" class="inputs" placeholder="Seu Email" required>
+                        <span class="span-required">Digite um email válido</span>
+                    </div>
+                    <div>
+                        <input type="tel" placeholder="Digite seu celular" class="inputs" pattern="\(\d{2}\)\s\d{4,5}-\d{4}$" onkeydown="return mascaraTelefone(event)"  title="(xx)xxxxx-xxxx" required>
+                        <span class="span-required">Digte um telefone válido</span>
+                    </div>
+                    <textarea  class="inputs" name="mensagem" id="mensagem" placeholder="Digite aqui sua mensagem..." rows="6" required></textarea>
+                    <div class="form_group">
+                        <input type="checkbox" name="agree_term" id="agree_term" class="agree_term" required />
+                        <label for="agree_term" class="label_agree_term"><span><span></span></span>Eu concordo com os <a href="#" class="term_service">termos de serviço</a></label>
+                    </div>
+                    <div class="form_button">
+                        <input type="submit" class="form_submit" value="Enviar"> 
+                        <input type="reset"  class="form_submit" value="Limpar">
+                    </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p class="rodape">Desenvolvido por Pedro Sbaraini Cordeiro</p>
+    </footer>
+</body>
+<script>
+    // Função para validar o nome
+    function nameValidate() {
+        const nameInput = document.getElementById("name");
+        const nameValue = nameInput.value.trim();
+        const spanNameRequired = document.querySelector(".span-required");
+
+        function setError(index){
+        nameInput[index].style.border = "1px solid #f84949"
+    }
+
+        if (nameValue.length < 3) {
+            spanNameRequired.style.display = "block";
+            nameInput.classList.add("invalid");
+            setError(0);
+        } else {
+            spanNameRequired.style.display = "none";
+            nameInput.classList.remove("invalid");
+        }
+    }
+
+
+
+    // Função para validar o email
+    function emailValidate() {
+        const emailInput = document.getElementById("email");
+        const emailValue = emailInput.value.trim();
+        const spanEmailRequired = document.querySelector(".span-required");
+
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+        if (!emailPattern.test(emailValue)) {
+            spanEmailRequired.style.display = "block";
+            emailInput.classList.add("invalid");
+        } else {
+            spanEmailRequired.style.display = "none";
+            emailInput.classList.remove("invalid");
+        }
+    }
+
+    // Função para validar o telefone
+    function telefoneValidate() {
+        const telefoneInput = document.getElementById("celular");
+        const telefoneValue = telefoneInput.value.trim();
+        const spanTelefoneRequired = document.querySelector(".span-required");
+
+        const telefonePattern = /\(\d{2}\)\s\d{4,5}-\d{4}$/;
+
+        if (!telefonePattern.test(telefoneValue)) {
+            spanTelefoneRequired.style.display = "block";
+            telefoneInput.classList.add("invalid");
+        } else {
+            spanTelefoneRequired.style.display = "none";
+            telefoneInput.classList.remove("invalid");
+        }
+    }
+
+    // Função para validar o formulário
+    function validateForm() {
+        nameValidate();
+        emailValidate();
+        telefoneValidate();
+
+        const agreeTermCheckbox = document.getElementById("agree_term");
+
+        if (!agreeTermCheckbox.checked) {
+            alert("Você deve concordar com os termos de serviço.");
+            return false;
+        }
+
+        return true;
+    }
+
+    // Adicionar eventos de validação aos campos
+    document.getElementById("name").addEventListener("input", nameValidate);
+    document.getElementById("email").addEventListener("input", emailValidate);
+    document.getElementById("celular").addEventListener("input", telefoneValidate);
+
+    // Adicionar evento de validação ao formulário
+    document.getElementById("form").addEventListener("submit", function (event) {
+        if (!validateForm()) {
+            event.preventDefault(); // Impede o envio do formulário se a validação falhar
+        }
+    });
+</script>
+
+</html>
