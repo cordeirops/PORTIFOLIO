@@ -132,3 +132,22 @@ footer{
     text-align: center;
 }
 
+
+.form_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10%;
+}
+
+.form_submit{
+    font-size: 17px;
+    display: flex;
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-terciaria);
+    cursor: pointer;
+    padding: 10px 20px;
+    justify-content: center;
+    flex-direction: column;
+}
