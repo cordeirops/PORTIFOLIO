@@ -54,7 +54,7 @@ header.cabecalho {
     font-weight: 600;
     color: var(--cor-terciaria);
     text-decoration: none;
-    white-space: nowrap; /* Adicione esta linha */
+    white-space: nowrap;
     
 }
 
@@ -102,7 +102,7 @@ h1{
 .span-required {
     color: #e36363;
     margin: 3px 0 0 1px;
-    display: none; /* Inicialmente, ocultar os spans de validação */
+    display: none;
     font-size: 12px;
     font-weight: 600;
     align-items: center;
@@ -200,7 +200,7 @@ button[type="submit"]{
 button[type="reset"]:hover{
     background-color: var(--cor-terciaria);
     color: var(--cor-primaria);
-    padding: 0.2%;
+    padding: 5%;
 }
 button[type="reset"]{
     padding: 1rem;
@@ -218,7 +218,7 @@ button[type="reset"]{
 button[type="submit"]:hover{
     background-color: var(--cor-terciaria);
     color: var(--cor-primaria);
-    padding: 0.2%;
+    padding: 05%;
 }
 
 
@@ -227,4 +227,76 @@ button[type="submit"]:hover{
         flex-direction: column;
         gap: 5px;
     }
+}
+
+/* Estilos para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--cor-secundaria);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 10px 20px 50px var(--cor-terciaria);
+    z-index: 1;
+    text-align: center;
+}
+
+.modal-content {
+    position: relative;
+}
+
+/* Estilos para o botão de fechar */
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Estilos para a mensagem de sucesso no modal */
+.success-message {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--cor-terciaria);
+}
+
+
+.received-data {
+    color: var(--cor-terciaria);
+    list-style: none;
+    padding: 0;
+}
+
+.received-data li {
+    color: var(--cor-terciaria);
+    margin: 10px 0;
+}
+
+.received-data strong {
+    color: var(--cor-terciaria);
+    font-weight: bold;
+}
+
+.received-data span {
+    font-weight: normal;
+    color: #333;
+}
+
+.button_container {
+    margin-top: 20px;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1;
 }
