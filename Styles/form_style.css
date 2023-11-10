@@ -17,16 +17,30 @@
     padding: 0;
 }
 
-body {
+body{
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-secundaria);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     background-color: var(--cor-primaria);
-    color: var(--cor-secundaria);
-    
+    flex-direction: column;
+
 }
 
-
-.cabecalho{
+header.cabecalho {
+    width: 100%;
     padding: 2% 0% 0% 15%;
+    display: flex;
+    gap: 80px;
+    font-family:var(--fonte-secundaria);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
 }
 
 .cabecalho__menu{
@@ -40,18 +54,20 @@ body {
     font-weight: 600;
     color: var(--cor-terciaria);
     text-decoration: none;
+    white-space: nowrap;
+    
 }
 
-main{
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 88vh;
-    overflow: hidden;
+.cabecalho__menu__link:hover{
+    background-color:var(--cor-hover);
+    padding: 0.2%;
 }
+
 footer{
     background-color: var(--cor-terciaria);
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 .rodape{
     color: var(--cor-secundaria);
@@ -62,65 +78,58 @@ footer{
     text-align: center;
 }
 
-.content{
-    background-color: var(--cor-hover);
-    border: 5px solid var(--cor-terciaria);
-    font-family: var(--fonte-secundaria);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
-    border-radius: 10px;
-    min-width: 50%;
-    overflow: auto;
 
+
+.content{
+    padding: 2rem 2rem 0rem 2rem;
+    border-radius: 10px;
+    min-width: 30%;
+    overflow: auto;
 }
+
 h1{
-    box-sizing: border-box;
-    margin-bottom: 16px;
-    display: flex;
-    justify-content: center;
+    margin-bottom: 1rem;
+    text-align: center;
     font-family: var(--fonte-primaria);
-    color: var(--cor-secundaria);
-    width: 100%;
 }
 
 .content form{
     display: flex;
     flex-direction: column;
-    gap: 10PX;
-    box-sizing: border-box;
+    gap: 1rem;
 }
-
 
 .span-required {
-    color: #f84949;
-    display: none; /* Inicialmente, ocultar os spans de validação */
+    color: #e36363;
+    margin: 3px 0 0 1px;
+    display: none;
+    font-size: 12px;
     font-weight: 600;
-
     align-items: center;
 }
 
-.inputs {
-    width: 98%;
-    box-sizing: content-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 9px;
+main {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--cor-terciaria);
+    border-radius: 5px;
+    background-color: var(--cor-hover);
+}
+
+.inputs{
+    padding: 8px 5px;
     outline: none;
-    border-radius: 5px; 
-    transition: .3s;   
+    border-radius: 5px;
     background-color: var(--cor-secundaria);
-    margin-right: 10%;
+    border: 2px solid var(--cor-terciaria);
     font-family: var(--fonte-secundaria);
     font-size: 20px;
     color: var(--cor-terciaria);
+    width: 100%;
+    box-sizing: border-box;
+    transition: .3s;
 }
 
-.inputs:focus{
-    border-color: var(--cor-terciaria);
-}
 
 input::placeholder {
     color: var(--cor-terciaria);
@@ -136,17 +145,24 @@ textarea::placeholder{
     box-sizing: border-box;
 }
 
-.form_group{
+.inputs:focus{
+    border-color: var(--cor-terciaria);
+}
+
+.box-select{
+    padding: 20px;
     display: flex;
-    justify-content: center;
-    align-items:center;
+    justify-content: space-evenly;
+    font-weight: bold;
+    font-family: var(--cor-secundaria);
+    color: var(--cor-terciaria);
+    gap: 1rem;
 }
 
 .agree_term{
     cursor: pointer;
 }
 .label_agree_term{
-    padding: 20px;
     display: flex;
     gap: 10px;
     font-size: 20px;
@@ -158,38 +174,129 @@ textarea::placeholder{
     font-family: var(--fonte-secundaria);
     color: var(--cor-secundaria);
     cursor: pointer;
-
 }
 
-.botoes_group{
+.button_container {
     display: flex;
     justify-content: center;
-    gap: 20px;
-}
-
-
-button[type="submit-reset"]{
-    padding: 1rem 10%;
-    display: flex;
     align-items: center;
+    margin-bottom: 2rem;
     gap: 20px;
-    border-radius: 5px;
-    font-family: var(--fonte-secundaria);
-    color: var(--cor-terciaria);
-    font-weight: 600;
+}
+
+button[type="submit"]{
+    padding: 1rem;
+    font-size: 1rem;
     outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
     background-color: var(--cor-secundaria);
+    color: var(--cor-terciaria);
     cursor: pointer;
-    transition: 0.3s;
+    transition: .3s;
 }
 
-button[type="submit-reset"]:hover{
-    color: var(--cor-secundaria);
+button[type="reset"]:hover{
     background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    padding: 5%;
+}
+button[type="reset"]{
+    padding: 1rem;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-terciaria);
+    cursor: pointer;
+    transition: .3s;
 }
 
-@media screen and (max-width: 536px){
-    .box-select{
+button[type="submit"]:hover{
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    padding: 05%;
+}
 
+
+@media screen and (max-width: 576px) {
+    .box-select{
+        flex-direction: column;
+        gap: 5px;
     }
+}
+
+/* Estilos para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--cor-secundaria);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 10px 20px 50px var(--cor-terciaria);
+    z-index: 1;
+    text-align: center;
+}
+
+.modal-content {
+    position: relative;
+}
+
+/* Estilos para o botão de fechar */
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Estilos para a mensagem de sucesso no modal */
+.success-message {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--cor-terciaria);
+}
+
+
+.received-data {
+    color: var(--cor-terciaria);
+    list-style: none;
+    padding: 0;
+}
+
+.received-data li {
+    color: var(--cor-terciaria);
+    margin: 10px 0;
+}
+
+.received-data strong {
+    color: var(--cor-terciaria);
+    font-weight: bold;
+}
+
+.received-data span {
+    font-weight: normal;
+    color: #333;
+}
+
+.button_container {
+    margin-top: 20px;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1;
 }
