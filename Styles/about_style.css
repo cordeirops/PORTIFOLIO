@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root{
+    --cor-primaria: #30362F;
+    --cor-secundaria: #FFFBDB;
+    --cor-terciaria: #DA7422;
+    --cor-hover: #625834;
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+.cabecalho{
+    padding: 2% 0% 0% 15%;  
+}
+
+
+.cabecalho__menu{
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link{
+    font-family:var(--fonte-secundaria);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+    border-bottom:2px solid var(--cor-secundaria);
+    border-radius: 5%;
+}
+
+.cabecalho__menu__link:hover{
+    background-color:var(--cor-hover);
+    padding: 0.2%;
+    transition: .3s;
+}
+
+.apresentacao{
+    padding: 05% 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--fonte-primaria);
+    color: var(--cor-terciaria);
+    gap: 20px;
+}
+.corpo{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+h1{
+    border-bottom: 2px solid var(--cor-secundaria);
+    border-radius: 5%;
+    /* #625834 */
+}
+
+.work-card{
+    font: var(--fonte-secundaria);
+    color: var(--cor-secundaria);
+    padding: 10px;
+    
+    
+}
+
+.work-description{
+    margin-bottom: 20px;
+}
+
+.work-description-links{
+    color: var(--cor-terciaria);
+}
+
+.show-description-button{
+    display: flex;
+    align-items:flex-end;
+    gap: 10px;
+    margin-left: 80%;
+    outline: none;
+    border: var(--cor-secundaria);
+    border-bottom:3px solid #625834;
+    border-radius: 5px;
+    background-color: var(--cor-secundaria);
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-terciaria);
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s;
+    padding: 5px; 
+}
+.show-description-button:hover{
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    padding: 1%;
+}
+
+.imagem-principal {
+    max-height: 490px;
+    max-width: 500px;
+    height: auto; /* Isso manterá a proporção original da imagem. */
+    border-radius: 10%;
+    border: 5px solid var(--cor-terciaria);
+    display: block;
+}
+footer{
+    background-color: var(--cor-terciaria);
+}
+.rodape{
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-primaria);
+    font-size: 24px;
+    padding: 24px;
+    font-weight: 400;
+    text-align: center;
+}

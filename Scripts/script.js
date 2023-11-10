@@ -4,6 +4,8 @@ const spans = document.querySelectorAll('.span-required');
 const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 const modal = document.getElementById('Modal');
 const backdrop = document.getElementById('backdrop');
+const show_descricao = document.querySelectorAll("botao_descricao");
+
 
 // Adicione um ouvinte de evento ao backdrop (elemento de fundo) para fechar o modal
 backdrop.addEventListener("click", () => {
@@ -87,7 +89,7 @@ function openModal() {
 
 // Função para fechar o modal
 function closeModal() {
-    console.log('Fechando o modal'); // Adicione esta linha
+    console.log('Fechando o modal');
     modal.style.display = 'none';
 }
 
@@ -114,4 +116,19 @@ form.addEventListener('submit', (event) => {
 
         openModal();
     }
+});
+
+function mostra_descricao(event) {
+    const descricao = document.querySelectorAll(".descricao");
+
+    if (descricao.style.display === "none" || descricao.style.display === "") {
+        descricao.style.display = "block";
+    } else {
+        descricao.style.display = "none";
+    }
+}
+
+
+botao_descricao.forEach(button => {
+    button.addEventListener("click", mostra_descricao);
 });

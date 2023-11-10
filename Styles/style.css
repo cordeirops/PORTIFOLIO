@@ -24,8 +24,9 @@ body {
 }
 
 .cabecalho{
-    padding: 2% 0% 0% 15%;
+    padding: 2% 0% 0% 15%;  
 }
+
 
 .cabecalho__menu{
     display: flex;
@@ -38,13 +39,15 @@ body {
     font-weight: 600;
     color: var(--cor-terciaria);
     text-decoration: none;
+    border-bottom:2px solid var(--cor-secundaria);
+    border-radius: 5%;
 }
 
 .cabecalho__menu__link:hover{
     background-color:var(--cor-hover);
     padding: 0.2%;
+    transition: .3s;
 }
-
 .titulo-destaque{
     color: var(--cor-terciaria);
 }
@@ -54,6 +57,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20%;
 }
 
 .apresentacao__conteudo{
@@ -64,19 +68,22 @@ body {
 }
 
 .apresentacao__conteudo__titulo{
-    font-size: 36px;
+    font-size: 30px;
     font-family: var(--fonte-primaria);
+    text-align: left;
 }
 
 .apresentacao__conteudo__texto{
     font-size: 24px;
-    font-family: var(--fonte-secundaria)
+    font-family: var(--fonte-secundaria);
+    text-align: justify;
 }
 
 .apresentacao__conteudo__texto a{
     text-decoration: none;
     color: var(--cor-terciaria);
 }
+
 
 .apresentacao__links{
     display: flex;
@@ -112,6 +119,7 @@ body {
 .apresentacao__links__link:hover{
     background-color: var(--cor-hover);
     padding: 3%;
+    transition: .3s;
 }
 
 
@@ -119,16 +127,19 @@ body {
     max-height: 490px;
     max-width: 500px;
     height: auto; /* Isso manterá a proporção original da imagem. */
+    border-radius: 10%;
+    border: 5px solid var(--cor-terciaria);
+    display: block;
 }
 footer{
     background-color: var(--cor-terciaria);
 }
 .rodape{
     color: var(--cor-secundaria);
-    font-family: var(--fonte-secundaria);
+    font-family: var(--fonte-primaria);
     font-size: 24px;
     padding: 24px;
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
 }
 

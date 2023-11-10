@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pr-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre mim</title>
-    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="/Styles/about_style.css">
 </head>
 <body>
     <header class="cabecalho">
@@ -14,36 +14,64 @@
             <a href="contact.html" class="cabecalho__menu__link">Contato</a>
         </nav>
     </header>
-    <main class="apresentacao">
-        <section class="apresentacao__conteudo">
-            <h1 class="apresentacao__conteudo__titulo">Sobre mim</h1><br>
-            <ul class="apresentacao__conteudo__texto">
-                <li> Bacharel em Ciências Contábeis</li><br>
-                <li> Mestre em Desenvolvimento Regional e Agronegócio</li><br>
-                <li> Estudante de Análise e Desenvolvimento de Sistemas</li><br>
-            </ul>
-            <h2 class="apresentacao__conteudo__titulo">Experiências</h2><br>
-            <p class="apresentacao__conteudo__texto">
-            <ul class="apresentacao__conteudo__texto">
-                <li> Nortus Tecnologia (2021- 2023) - Estágio Dev/Suporte </li><br>
-                <li> UNIOESTE (2021- 2023) - Bolsista de Mestrado </li><br>
-                <li> UNIOESTE (2018- 2019) - Bolsista de Graduação </li><br>
-                <li> Orca Contabilidade (2017- 2018) - Estágiaro de Contabilidade </li><br>
-            </ul>
-            </p>
-            <h2 class="apresentacao__conteudo__titulo">Estudos</h2><br>
-            <div class="apresentacao__conteudo__texto">
-            <ul class="apresentacao__conteudo__texto">
-                <li>Spring Boot 3 - Alura Cursos <a href="https://cursos.alura.com.br/certificate/499b0e3b-5967-4114-9e99-ef47dc29ac91">com certificado</a> </li><br>
-                <li>Java OO - Alura Cursos <a href="https://cursos.alura.com.br/certificate/483faa6d-d489-4805-970a-121c1d7f8718">com certificado</a></li><br>
-                <li>Html e CSS - Alura Cursos <a href="https://cursos.alura.com.br/certificate/faa5df85-5e60-4359-80ab-8f2a68e1a571">com certificado</a></li><br>
-            </ul>
-            </div>    
-        </section>
-        <img class="imagem-principal" src="/Assets/foto.jpg" alt="Foto do Pedro Sbaraini Cordeiro">
-    </main>
-    <footer>
-        <p class="rodape">Desenvolvido por Pedro Sbaraini Cordeiro</p>
-    </footer>  
+<main class="apresentacao">
+    <section class="corpo">
+    <h1>Sobre mim</h1>
+    <div class="work-card">
+        
+        <p class="work-description" style="display: none;"> 
+            <br>- Bacharel em Ciências Contábeis<br>
+            <br>- Mestre em Desenvolvimento Regional e Agronegócio<br>
+            <br>- Estudante de Análise e Desenvolvimento de Sistemas<br>
+        </p>
+        <button class="show-description-button">Ver mais</button>
+    </div>
+    <h1>Experiências</h1>
+    <div class="work-card">
+        
+        <p class="work-description" style="display: none;"> 
+            <br>- Nortus Tecnologia (2021- 2023) - Estágio Dev/Suporte <br>
+            <br>- UNIOESTE (2021- 2023) - Bolsista de Mestrado <br>
+            <br>- UNIOESTE (2018- 2019) - Bolsista de Graduação <br>
+            <br>- Orca Contabilidade (2017- 2018) - Estágiaro de Contabilidade <br>
+        </p>
+        <button class="show-description-button">Ver mais</button>
+    </div>
+    <h1>Estudos</h1>
+    <div class="work-card">
+       
+        <p class="work-description" style="display: none;">
+            <br>- Spring Boot 3 - Alura Cursos <a class="work-description-links" href="https://cursos.alura.com.br/certificate/499b0e3b-5967-4114-9e99-ef47dc29ac91">com certificado</a><br>
+            <br>- Java OO - Alura Cursos <a class="work-description-links" href="https://cursos.alura.com.br/certificate/483faa6d-d489-4805-970a-121c1d7f8718">com certificado</a><br>
+            <br>- Html e CSS - Alura Cursos <a class="work-description-links" href="https://cursos.alura.com.br/certificate/faa5df85-5e60-4359-80ab-8f2a68e1a571">com certificado</a><br>
+        </p>
+        <button class="show-description-button">Ver mais</button>
+    </div>
+    </section>
+    <section>
+        <img class="imagem-principal" src="/Assets/foto.jpg" alt="Foto de Pedro Sbaraini Cordeiro">
+    </section>
+</main>
+<footer>
+    <p class="rodape">Desenvolvido por Pedro Sbaraini Cordeiro</p>
+</footer>  
 </body>
+<script>
+    const showDescriptButtons = document.querySelectorAll(".show-description-button");
+
+    function toggleDescription(event){
+        const workDescription = event.target.parentElement.querySelector(".work-description");
+
+        if (workDescription.style.display === "none" || workDescription.style.display === "" ){
+            workDescription.style.display = "block";
+        } else {
+            workDescription.style.display = "none";
+        }
+    }
+
+    showDescriptButtons.forEach(button => {
+        button.addEventListener("click", toggleDescription);
+    })
+</script>
+
 </html>

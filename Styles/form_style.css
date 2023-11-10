@@ -43,6 +43,11 @@ header.cabecalho {
     margin-bottom: 2rem;
 }
 
+.cabecalho{
+    padding: 2% 0% 0% 15%;  
+}
+
+
 .cabecalho__menu{
     display: flex;
     gap: 80px;
@@ -54,8 +59,8 @@ header.cabecalho {
     font-weight: 600;
     color: var(--cor-terciaria);
     text-decoration: none;
-    white-space: nowrap;
-    
+    border-bottom:2px solid var(--cor-secundaria);
+    border-radius: 5%;
 }
 
 .cabecalho__menu__link:hover{
@@ -71,10 +76,10 @@ footer{
 }
 .rodape{
     color: var(--cor-secundaria);
-    font-family: var(--fonte-secundaria);
+    font-family: var(--fonte-primaria);
     font-size: 24px;
     padding: 24px;
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
 }
 
