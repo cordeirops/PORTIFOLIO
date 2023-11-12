@@ -87,9 +87,9 @@ body {
 
 .apresentacao__links{
     display: flex;
-    flex-direction: column; /* DEIXA OS ITENS NO EIXO VERTICAL*/
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center; /*ALINHA OS ITENS NO EIXO VERTICAL */
+    align-items: center;
     gap: 32px;
     
 }
@@ -126,7 +126,7 @@ body {
 .imagem-principal {
     max-height: 490px;
     max-width: 500px;
-    height: auto; /* Isso manterá a proporção original da imagem. */
+    height: auto;
     border-radius: 10%;
     border: 5px solid var(--cor-terciaria);
     display: block;

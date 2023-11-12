@@ -112,7 +112,7 @@ h1{
 .imagem-principal {
     max-height: 490px;
     max-width: 500px;
-    height: auto; /* Isso manterá a proporção original da imagem. */
+    height: auto;
     border-radius: 10%;
     border: 5px solid var(--cor-terciaria);
     display: block;

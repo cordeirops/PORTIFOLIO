@@ -7,7 +7,7 @@ const backdrop = document.getElementById('backdrop');
 const show_descricao = document.querySelectorAll("botao_descricao");
 
 
-// Adicione um ouvinte de evento ao backdrop (elemento de fundo) para fechar o modal
+
 backdrop.addEventListener("click", () => {
     closeModal();
 });
