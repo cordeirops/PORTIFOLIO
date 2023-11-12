@@ -118,17 +118,7 @@ form.addEventListener('submit', (event) => {
     }
 });
 
-function mostra_descricao(event) {
-    const descricao = document.querySelectorAll(".descricao");
-
-    if (descricao.style.display === "none" || descricao.style.display === "") {
-        descricao.style.display = "block";
-    } else {
-        descricao.style.display = "none";
-    }
-}
 
 
-botao_descricao.forEach(button => {
-    button.addEventListener("click", mostra_descricao);
-});
+
+
